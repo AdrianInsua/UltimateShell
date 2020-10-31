@@ -13,11 +13,13 @@ function sudo()
 function getConfirm ($message) {
     if ($global:confirm -ceq 'Y') {
         return 'y'
-    } elseif ($global:confirm -ceq 'N') {
-        return 'n'
     }
 
     $global:confirm = Read-Host "$message. Are you sure? [y]es | [n]o | [Y]es to all | [N]o to all: "
+
+    if ($global:confirm -ceq 'N') {
+        exit
+    }
 
     return $global:confirm
 }
