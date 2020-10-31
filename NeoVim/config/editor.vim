@@ -17,3 +17,6 @@ set foldlevelstart=3
 set termguicolors
 
 syntax enable
+
+" Highlight on yank
+au TextYankPost * silent! lua vim.highlight.on_yank {on_visual=false}
