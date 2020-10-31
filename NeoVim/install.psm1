@@ -34,7 +34,7 @@ function Install-NeoVim {
     $confirmFix = getConfirm("Neovim fzf preview have some bugs on w10, we are gonna fix them!")
 
     if ($confirmFix -eq 'y') {
-        wget https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.7.2-1/rubyinstaller-devkit-2.7.2-1-x64.exe -Output rubyinstaller.exe
+        wget https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.7.2-1/rubyinstaller-devkit-2.7.2-1-x64.exe -OutFile rubyinstaller.exe
         rubyinstaller.exe
         mv .\NeoVim\fix\preview.rb "$env:HOME\.vim\plugged\fzf.vim\bin" -Force
         mv .\NeoVim\fix\vim.vim "$env:HOME\.vim\plugged\fzf.vim\autoload\fzf" -Force
