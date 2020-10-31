@@ -88,7 +88,7 @@ To make your life easier here you have my configuration, the things you must cha
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "name": "Ubuntu",
-                "colorScheme": "Gruvbox Dark",
+                "colorScheme": "Gruvbox Dark Modified",
                 "background": "#282828",
                 "fontFace": "RobotoMono Nerd Font",
                 "fontSize": 11,

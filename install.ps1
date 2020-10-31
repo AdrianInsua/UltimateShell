@@ -46,10 +46,4 @@ if ($confirmAlias -eq 'y') {
     Add-Content $profile "function sprof {"
     Add-Content $profile "    . $PROFILE"
     Add-Content $profile "}"
-    Add-Content $profile "function wsnip {"
-    Add-Content $profile "    v $env:HOME\Documents\work-snippets.md"
-    Add-Content $profile "}"
-    Add-Content $profile "function ovi {"
-    Add-Content $profile "    v ."
-    Add-Content $profile "}"
 }
