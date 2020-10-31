@@ -41,7 +41,7 @@ To make your life easier here you have my configuration, the things you must cha
 
 ## My wonderfull powershell configuration 
 
-```JSON
+```jsonc
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
 

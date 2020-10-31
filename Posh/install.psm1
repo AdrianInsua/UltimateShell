@@ -23,7 +23,7 @@ function Install-Posh {
     Write-Host ""
     Write-Host "We recommend to install RobotoMono Nerd Font to render correct icons in shell"
     Write-Host ""
-    Write-Host "Also you should check windows-terminal (https://github.com/AdrianInsua/UltimateShell/Posh/README.md) settings to fix color schemes and fonts"
+    Write-Host "Also you should check windows-terminal (https://github.com/AdrianInsua/UltimateShell/tree/main/Posh#my-wonderfull-powershell-configuration) settings to fix color schemes and fonts"
     Write-Host ""
 
     $confirmFonts = getConfirm("You are going to install Roboto Mono font")
