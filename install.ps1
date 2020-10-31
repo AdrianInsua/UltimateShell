@@ -1,5 +1,6 @@
 Import-Module ./helpers/functions.psm1
 Import-Module ./Posh/install.psm1
+Import-Module ./NeoVim/install.psm1
 
 $global:confirm = 'not-set'
 
@@ -22,13 +23,26 @@ if ($confirmWT -eq 'y') {
 Install-Posh
 
 # install neovim
-$confirmNeovim = getConfirm("You are going to install neovim and required file manager plugins")
+Install-NeoVim
 
-if ($confirmNeovim -eq 'y') {
-    choco install neovim --pre
-    choco install ripgrep
-    choco install fzf
-    choco install bat
-    choco install ag
+# add basic aliases
+$confirmAlias = getConfirm("You are going to populate some basic aliases in your profile.")
+
+if ($confirmAlias -eq 'y') {
+    Add-Content $profile "# profile aliases"
+    Add-Content $profile "function evim {"
+    Add-Content $profile "    v $env:HOME\AppData\Local\nvim\init.vim"
+    Add-Content $profile "}"
+    Add-Content $profile "function eprof {"
+    Add-Content $profile "    v $profile"
+    Add-Content $profile "}"
+    Add-Content $profile "function sprof {"
+    Add-Content $profile "    . $PROFILE"
+    Add-Content $profile "}"
+    Add-Content $profile "function wsnip {"
+    Add-Content $profile "    v $env:HOME\Documents\work-snippets.md"
+    Add-Content $profile "}"
+    Add-Content $profile "function ovi {"
+    Add-Content $profile "    v ."
+    Add-Content $profile "}"
 }
-
