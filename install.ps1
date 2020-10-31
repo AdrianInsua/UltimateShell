@@ -19,6 +19,13 @@ if ($confirmWT -eq 'y') {
     choco install microsoft-windows-terminal
 }
 
+# install vimify explorer
+$confirmVimify = getConfirm("You are going to install vimify explorer. Windows explorer with vim keys")
+
+if ($confirmVimify -eq 'y') {
+    wget https://github.com/sahilsehwag/AHK-VimifiedExplorer/releases/download/1.0/VimifiedExplorer.exe -OutFile "$env:HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\vimifiedExplorer.exe"
+}
+
 # install posh
 Install-Posh
 
