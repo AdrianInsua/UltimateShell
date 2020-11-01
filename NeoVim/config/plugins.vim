@@ -74,7 +74,7 @@ let g:ScalpelMap=0
 
 
 """ Coc configuration
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-eslint', 'coc-snippets', 'coc-jest']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-eslint', 'coc-snippets', 'coc-jest', 'coc-css']
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
