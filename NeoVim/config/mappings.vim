@@ -18,7 +18,7 @@ nmap <Leader>nt :NERDTreeFind<CR>
 " search for methods
 nmap <Leader>om :CocList outline methods<CR>
 " write
-nmap <Leader>w :w<CR>
+nmap <Leader>w :w!<CR>
 " close
 nmap <Leader>c :q!<CR>
 " close all
