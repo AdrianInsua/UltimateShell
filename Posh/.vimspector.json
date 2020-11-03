@@ -1,0 +1,17 @@
+{
+  "configurations": {
+    "run": {
+      "adapter": "vscode-node",
+      "configuration": {
+        "type": "node",
+        "request": "attach",
+        "protocol": "inspector",
+        "port": 9229,
+        "restart": true,
+        "sourceMaps": true,
+        "address": "localhost",
+        "timeout": 50000
+      }
+    }
+  }
+}
