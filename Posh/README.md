@@ -134,11 +134,15 @@ To make your life easier here you have my configuration, the things you must cha
     // To learn more about actions and keybindings, visit https://aka.ms/terminal-keybindings
     "actions":
     [
+        { "command": "toggleFullscreen", "keys": "shift+f11" },
+        { "command": null, "keys": "f11" },
         // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
         // These two lines additionally bind them to Ctrl+C and Ctrl+V.
         // To learn more about selection, visit https://aka.ms/terminal-selection
         { "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
         { "command": "paste", "keys": "ctrl+shift+v" },
+        { "command": { "action": "adjustFontSize", "delta": 1 }, "keys": "ctrl+ç" }, 
+        { "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+-" }, 
 
         // Press Ctrl+Shift+F to open the search box
         { "command": "find", "keys": "ctrl+shift+f" },
