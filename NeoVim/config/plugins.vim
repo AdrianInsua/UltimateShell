@@ -19,6 +19,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'wincent/scalpel'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-surround'
+Plug 'puremourning/vimspector'
 
 " Autocomplete
 
@@ -46,6 +47,8 @@ call plug#end()
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "light"
 
+let g:vimspector_enable_mappings = 'HUMAN'
+
 " Reconfigure plugins
 let g:EasyMotion_smartcase = 1
 
@@ -68,6 +71,7 @@ let g:fzf_branch_actions = {
       \ },
       \}
 let $FZF_DEFAULT_COMMAND='ag --ignore node_modules --ignore dist -g ""'
+let $FZF_DEFAULT_OPTS='--layout=reverse --bind ctrl-d:preview-down --bind ctrl-u:preview-up'
 
 let g:ScalpelMap=0
 
@@ -79,11 +83,8 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
 endif
 
-let g:coc_snippet_next = '<c-j>'
-let g:coc_snippet_prev = '<c-k>'
-
 """ Multiple cursor coc
-nmap <expr> <silent> <C-d> <SID>select_current_word()
+nmap <expr> <silent> <A-d> <SID>select_current_word()
 function! s:select_current_word()
   if !get(g:, 'coc_cursors_activated', 0)
     return "\<Plug>(coc-cursors-word)"

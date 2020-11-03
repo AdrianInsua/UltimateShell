@@ -15,14 +15,16 @@ nmap <Leader>r <Plug>(Scalpel)
 nmap <Leader>ns :noh<CR>
 " folders tree
 nmap <Leader>nt :NERDTreeFind<CR>
+" Explorer
+nmap <Leader>ex :Explore<CR> 
 " search for methods
 nmap <Leader>om :CocList outline methods<CR>
 " write
 nmap <Leader>w :w!<CR>
 " close
-nmap <Leader>c :q!<CR>
+nmap <C-c> :q!<CR>
 " close all
-nmap <Leader>C :qa!<CR>
+nmap <C-q> :qa!<CR>
 " edit file (reload)
 nmap <Leader>e :e<CR>
 " Close and save
@@ -42,7 +44,7 @@ vnoremap <C-p> "_dP
 " TERM REMAPS
 "
 " create a term with powershell in a new tab
-nmap term :tabnew:termApowershell.exe
+nmap <leader>term :tabnew:termApowershell.exe
 " remap escape in term mode
 tnoremap jj <C-\><C-n>
 
@@ -121,18 +123,17 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 nmap <silent>=i :CocCommand prettier.formatFile<CR>
 
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
 " Map fzf search to CTRL P
-nnoremap <leader>p :Files<Cr>
+nnoremap <Leader>p :Files<Cr>
 " Map fzf + ag search to CTRL P
-nnoremap <leader>g :Ag<Cr>
+nnoremap <Leader>g :Ag<Cr>
+" Map fzf to search nvim config files
+nnoremap <Leader>ev :Files ~/AppData/Local/nvim/<Cr>
 
 " Snippet remaps
-imap <C-l> <Plug>(coc-snippets-expand)
+imap <A-l> <Plug>(coc-snippets-expand)
 
-vmap <C-j> <Plug>(coc-snippets-select)
+vmap <A-j> <Plug>(coc-snippets-select)
 
 xmap <leader>sn <Plug>(coc-convert-snippet)
 
@@ -147,4 +148,10 @@ nnoremap <leader>te :call CocAction('runCommand', 'jest.singleTest')<CR>
 
 " Init jest in current cwd, require global jest command exists
 command! JestInit :call CocAction('runCommand', 'jest.init')
+
+" debugging
+"
+nmap <Leader>db :call vimspector#Launch()<CR>
+nmap <Leader>dc :VimspectorReset<CR>
+nmap <Leader>de :VimspectorEval
 
