@@ -9,6 +9,8 @@ nnoremap <silent><Leader>1 :source ~/AppData/Local/nvim/init.vim \| :PlugInstall
 
 " search
 nmap <Leader>s <Plug>(easymotion-sn)
+" seach next ocurrence
+nmap <Leader>f /
 " replace
 nmap <Leader>r <Plug>(Scalpel)
 " delete search highlights
@@ -25,10 +27,16 @@ nmap <Leader>w :w!<CR>
 nmap <C-c> :q!<CR>
 " close all
 nmap <C-q> :qa!<CR>
-" edit file (reload)
-nmap <Leader>e :e<CR>
+" select all
+nmap <Leader>al ggVG
+" open file
+nmap <Leader>e :e 
+"open package
+nmap <Leader>ep :e package.json<CR>
+"open currentFile
+nmap <Leader>ec :e %<tab>
 " Close and save
-nmap <Leader>x :x<CR>
+nmap <Leader>x :w<CR>:q!<CR>
 " Back to previous file
 nmap <Leader>b :e#<CR>
 " move line down
@@ -48,6 +56,10 @@ nmap <leader>term :tabnew:termApowershell.exe
 " remap escape in term mode
 tnoremap jj <C-\><C-n>
 
+" splits
+nmap <Leader>vs :vsplit<CR> :TmuxNavigateRight<CR>
+nmap <Leader>hs :split<CR> :TmuxNavigateDown<CR>
+
 " split resizes
 nmap <A-L> :vertical resize +5<CR>
 nmap <A-H> :vertical resize -5<CR>
@@ -58,6 +70,7 @@ nmap <A-J> :resize -5<CR>
 nnoremap <leader>ga. :G add .<CR>
 nnoremap <leader>gs :G<CR>
 nnoremap <leader>gb :GBranches<CR>
+nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>gpl :Gpull<CR>
 nnoremap <leader>gpd :Gpull origin develop<CR>
 nnoremap <leader>gpm :Gpull origin master<CR>
@@ -155,3 +168,11 @@ nmap <Leader>db :call vimspector#Launch()<CR>
 nmap <Leader>dc :VimspectorReset<CR>
 nmap <Leader>de :VimspectorEval
 
+nmap <Leader>dl <Plug>VimspectorStepInto
+nmap <Leader>dj <Plug>VimspectorStopOver
+nmap <Leader>dk <Plug>VimspectorStepOut
+nnoremap <Leader>d<space> :call vimspector#Continue()<CR>
+
+nmap <Leader>drc <Plug>VimspectorRunToCursor
+nmap <Leader>dbp <Plug>VimspectorToggleBreakpoint
+nmap <Leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint

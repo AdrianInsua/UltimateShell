@@ -41,6 +41,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'tjdevries/train.nvim'
 
+" Navigator
+Plug 'glacambre/firenvim', { 'do': {_ -> firenvim#install(1)} }
+
 call plug#end()
 
 " Set colorscheme
@@ -93,3 +96,21 @@ function! s:select_current_word()
 endfunc
 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+"Browser
+"
+let g:firenvim_config = { 
+    \ 'globalSettings': {
+        \ 'alt': 'all',
+    \  },
+    \ 'localSettings': {
+        \ '.*': {
+            \ 'cmdline': 'neovim',
+            \ 'priority': 0,
+            \ 'selector': 'textarea',
+            \ 'takeover': 'always',
+        \ },
+    \ }
+\ }
+let fc = g:firenvim_config['localSettings']
+let fc['.*'] = { 'selector': 'textarea:not([role=combobox])', 'takeover': 'never' }
