@@ -31,14 +31,14 @@
           "properties": {
             "folder_separator_icon": "  ",
             "home_icon": "~",
-            "prefix": "   ",
+            "prefix": "  ",
             "style": "folder"
           },
           "style": "powerline",
           "type": "path"
         },
         {
-          "background": "#fffb38",
+          "background": "#aced7d",
           "foreground": "#193549",
           "powerline_symbol": "",
           "properties": {

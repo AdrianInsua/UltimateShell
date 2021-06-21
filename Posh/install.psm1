@@ -16,8 +16,8 @@ function Install-Posh {
     $confirmTheme = getConfirm("You are going to install awesome Suampa theme for oh-my-posh and set it as default theme")
 
     if ($confirmTheme -eq 'y') {
-        Move-Item -Force ./Posh/themes/Suampa.psm1 $ThemeSettings.MyThemesLocation
-        Add-Content $profile "Set-Theme Suampa"
+        Move-Item -Force ./Posh/themes/suampa.json $home/suampa.json
+        Add-Content $profile "Set-PoshPrompt -Theme $home/suampa.json"
     }
 
     Write-Host ""
