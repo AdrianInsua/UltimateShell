@@ -1,5 +1,6 @@
 " vim editor configuration
 "
+set nocompatible
 set number
 set numberwidth=1
 set relativenumber
@@ -13,9 +14,12 @@ set softtabstop=4
 set expandtab
 set shiftwidth=4
 set foldmethod=syntax
+set fileformat=unix
 set foldlevelstart=3
 set termguicolors
 set undofile
+set nobackup      " No autocreation of backup files
+set nowritebackup " No autocreation of backup files
 
 syntax enable
 

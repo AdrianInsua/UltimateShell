@@ -1,9 +1,11 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": [ "javascript", "typescript" ],
+    "coc.preferences.formatOnSaveFiletypes": [ "javascript",  "javascriptreact", "typescript", "typescriptreact"],
     "jest.watch": false,
     "prettier.eslintIntegration": true,
     "eslint.autoFixOnSave": true,
     "typescript.preferences.importModuleSpecifier": "relative",
+    "typescript.suggest.autoImports": true,
+    "tsserver.trace.server": "verbose",
     "snippets.extends": {
         "typescript": ["javascript"]
     }

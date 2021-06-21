@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='D:/Trabajo/drfrcomr/node_modules/js-drivecommons/dist/middlewares/data'
+let g:netrw_dirhist_4='D:/Trabajo/drfrcomr/node_modules/js-drivecommons/dist/middlewares'
+let g:netrw_dirhist_3='D:/Trabajo/drfrcomr/node_modules/js-drivecommons/dist'
+let g:netrw_dirhist_2='D:/Trabajo/drfrcomr/node_modules/js-drivecommons'
+let g:netrw_dirhist_1='D:/Trabajo/drfrcomr/node_modules'
+let g:netrw_dirhist_0='D:\Trabajo\drfrcomr'
+let g:netrw_dirhist_9='D:\Trabajo\libngdrc\projects\drive_commons\components\odometer'
+let g:netrw_dirhist_8='D:\Trabajo\drfrcomr\front\src\app\sales\home\components\ranking'
+let g:netrw_dirhist_7='D:\Trabajo\drfrcomr\front\src\assets\i18n'
+let g:netrw_dirhist_6='D:\Trabajo\drfrcomr\front\src\app\sales\home\components\ranking'

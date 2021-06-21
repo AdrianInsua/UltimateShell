@@ -8,22 +8,22 @@ Plug 'morhetz/gruvbox'
 
 " IDE
 
-Plug 'easymotion/vim-easymotion'
+"Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline'
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdcommenter'
-Plug 'sheerun/vim-polyglot'
-Plug 'wincent/scalpel'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-surround'
 Plug 'puremourning/vimspector'
+Plug 'jxnblk/vim-mdx-js'
 
 " Autocomplete
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'sheerun/vim-polyglot'
 
 " FZF
 
@@ -38,8 +38,8 @@ Plug 'airblade/vim-gitgutter'
 
 " Games
 
-Plug 'ThePrimeagen/vim-be-good'
-Plug 'tjdevries/train.nvim'
+"Plug 'ThePrimeagen/vim-be-good'
+"Plug 'tjdevries/train.nvim'
 
 " Navigator
 Plug 'glacambre/firenvim', { 'do': {_ -> firenvim#install(1)} }
@@ -68,19 +68,18 @@ let g:fzf_branch_actions = {
       \   'prompt': 'Track> ',
       \   'execute': 'echo system("{git} checkout --track {branch}")',
       \   'multiple': v:false,
-      \   'keymap': 'alt-t',
+      \   'keymap': 'ctrl-t',
       \   'required': ['branch'],
       \   'confirm': v:false,
       \ },
       \}
 let $FZF_DEFAULT_COMMAND='ag --ignore node_modules --ignore dist -g ""'
 let $FZF_DEFAULT_OPTS='--layout=reverse --bind ctrl-d:preview-down --bind ctrl-u:preview-up'
-
-let g:ScalpelMap=0
+let g:fzf_checkout_git_options = '--sort=-committerdate'
 
 
 """ Coc configuration
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-eslint', 'coc-snippets', 'coc-jest', 'coc-css']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-eslint', 'coc-snippets', 'coc-jest', 'coc-css', 'coc-vetur']
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
@@ -96,6 +95,7 @@ function! s:select_current_word()
 endfunc
 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 
 "Browser
 "
@@ -114,3 +114,4 @@ let g:firenvim_config = {
 \ }
 let fc = g:firenvim_config['localSettings']
 let fc['.*'] = { 'selector': 'textarea:not([role=combobox])', 'takeover': 'never' }
+let g:closetag_xhtml_filetypes = 'xhtml,javascript.jsx,jsx,js'

@@ -1,4 +1,5 @@
 let mapleader = " "
+set wildcharm=<tab>
 
 " COMMON REMAPS
 "
@@ -52,7 +53,7 @@ vnoremap <C-p> "_dP
 " TERM REMAPS
 "
 " create a term with powershell in a new tab
-nmap <leader>term :tabnew:termApowershell.exe
+nmap <leader>term :tabnew:termApowershell.exe
 " remap escape in term mode
 tnoremap jj <C-\><C-n>
 
@@ -74,6 +75,7 @@ nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>gpl :Gpull<CR>
 nnoremap <leader>gpd :Gpull origin develop<CR>
 nnoremap <leader>gpm :Gpull origin master<CR>
+nnoremap <leader>gpma :Gpull origin main<CR>
 nnoremap <leader>gp :Git push  --set-upstream origin head<CR>
 nnoremap <leader>gpn :Git push origin --set-upstream head --no-verify<CR>
 nnoremap <leader>gc :Gcommit<CR>
@@ -142,6 +144,8 @@ nnoremap <Leader>p :Files<Cr>
 nnoremap <Leader>g :Ag<Cr>
 " Map fzf to search nvim config files
 nnoremap <Leader>ev :Files ~/AppData/Local/nvim/<Cr>
+" Map fzf to search work md files
+nnoremap <Leader>ew :Files ~/Documents/work<Cr>
 
 " Snippet remaps
 imap <A-l> <Plug>(coc-snippets-expand)
