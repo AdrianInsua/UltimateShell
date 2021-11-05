@@ -55,6 +55,7 @@ let g:vimspector_enable_mappings = 'HUMAN'
 " Reconfigure plugins
 let g:EasyMotion_smartcase = 1
 
+let g:fzf_checkout_merge_settings = v:false
 let g:fzf_branch_actions = {
       \ 'rebase': {
       \   'prompt': 'Rebase> ',
@@ -72,14 +73,38 @@ let g:fzf_branch_actions = {
       \   'required': ['branch'],
       \   'confirm': v:false,
       \ },
-      \}
-let $FZF_DEFAULT_COMMAND='ag --ignore node_modules --ignore dist -g ""'
+      \ 'new': {
+      \   'prompt': 'New branch> ',
+      \   'execute': 'echo system("{git} checkout -b {input}")',
+      \   'multiple': v:false,
+      \   'keymap': 'ctrl-b',
+      \   'required': [],
+      \   'confirm': v:false,
+      \ },
+      \ 'checkout': {
+      \   'prompt': 'Checkout> ',
+      \   'execute': 'echo system("{git} checkout {branch}")',
+      \   'multiple': v:false,
+      \   'keymap': 'enter',
+      \   'required': ['branch'],
+      \   'confirm': v:false,
+      \ },
+      \ 'remove': {
+      \   'prompt': 'Remove> ',
+      \   'execute': 'echo system("{git} branch -D {branch}")',
+      \   'multiple': v:false,
+      \   'keymap': 'ctrl-r',
+      \   'required': ['branch'],
+      \   'confirm': v:true,
+      \ },
+\}
+let $FZF_DEFAULT_COMMAND='ag -g ""'
 let $FZF_DEFAULT_OPTS='--layout=reverse --bind ctrl-d:preview-down --bind ctrl-u:preview-up'
 let g:fzf_checkout_git_options = '--sort=-committerdate'
 
 
 """ Coc configuration
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-eslint', 'coc-snippets', 'coc-jest', 'coc-css', 'coc-vetur']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-eslint',  'coc-prettier', 'coc-snippets', 'coc-jest', 'coc-css', 'coc-vetur']
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']

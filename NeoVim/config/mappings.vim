@@ -34,6 +34,8 @@ nmap <Leader>al ggVG
 nmap <Leader>e :e 
 "open package
 nmap <Leader>ep :e package.json<CR>
+"open code/package 
+nmap <Leader>ecp :e code/package.json<CR>
 "open currentFile
 nmap <Leader>ec :e %<tab>
 " Close and save
@@ -72,14 +74,22 @@ nnoremap <leader>ga. :G add .<CR>
 nnoremap <leader>gs :G<CR>
 nnoremap <leader>gb :GBranches<CR>
 nnoremap <leader>gl :Glog<CR>
-nnoremap <leader>gpl :Gpull<CR>
-nnoremap <leader>gpd :Gpull origin develop<CR>
-nnoremap <leader>gpm :Gpull origin master<CR>
-nnoremap <leader>gpma :Gpull origin main<CR>
+nnoremap <leader>gpl :Git pull<CR>
+nnoremap <leader>gpd :Git pull origin develop<CR>
+nnoremap <leader>gpm :Git pull origin master<CR>
+nnoremap <leader>gpmo :Git pull origin master --allow-unrelated-histories --strategy-option=ours --no-verify<CR>
+nnoremap <leader>gpma :Git pull origin main<CR>
 nnoremap <leader>gp :Git push  --set-upstream origin head<CR>
 nnoremap <leader>gpn :Git push origin --set-upstream head --no-verify<CR>
-nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gcn :Gcommit --no-verify<CR>
+nnoremap <leader>gpt :Git push --tags --no-verify<CR>
+nnoremap <leader>gtag :Git tag 
+nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gcs :Git commit -S<CR>
+nnoremap <leader>gcn :Git commit --no-verify<CR>
+nnoremap <leader>gcsn :Git commit -S --no-verify<CR>
+nnoremap <leader>gcch :Git commit -a -m "update changelog" --no-verify<CR>
+nnoremap <leader>gcrv :Git commit -a -m "set release version" --no-verify<CR>
+nnoremap <leader>gcsv :Git commit -a -m "set snapshot version" --no-verify<CR>
 nnoremap <leader>ad :AbortDispatch<CR>
 
 nmap <leader>ml :diffget //2<CR>
@@ -129,6 +139,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gimp <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gf <Plug>(coc-definition)
+nmap <silent> [f <Plug>(coc-definition)
 
 " Remap keys for applying codeAction to the current line.
 nmap <leader>ac  <Plug>(coc-codeaction)

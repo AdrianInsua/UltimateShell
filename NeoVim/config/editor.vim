@@ -3,6 +3,7 @@
 set nocompatible
 set number
 set numberwidth=1
+set mouse=a
 set relativenumber
 set nowrap
 set encoding=utf-8
@@ -26,3 +27,4 @@ syntax enable
 " Highlight on yank
 au TextYankPost * silent! lua vim.highlight.on_yank {on_visual=false}
 syntax region htmlFold start="<\z(\<\(area\|base\|br\|col\|command\|embed\|hr\|img\|input\|keygen\|link\|meta\|para\|source\|track\|wbr\>\)\@![a-z-]\+\>\)\%(\_s*\_[^/]\?>\|\_s\_[^>]*\_[^>/]>\)" end="</\z1\_s*>" fold transparent keepend extend containedin=htmlHead
+

@@ -19,7 +19,7 @@ nnoremap <Leader>cob :G checkout -b bugfix/autodeploy.DRFRCOMR-
 nnoremap <Leader>sif :G checkout -b feature/autodeploy.DRFRSINT-
 nnoremap <Leader>sib :G checkout -b bugfix/autodeploy.DRFRSINT-
 nnoremap <Leader>psf :G checkout -b feature/autodeploy.DRFRPSTS-
-nnoremap <Leader>psb :G checkout -b feature/autodeploy.DRFRPSTS-
+nnoremap <Leader>psb :G checkout -b bugfix/autodeploy.DRFRPSTS-
 
 nnoremap <Leader>jsb :G checkout -b bugfix/LIBJSDRC-
 nnoremap <Leader>jsf :G checkout -b feature/LIBJSDRC-
