@@ -1,0 +1,6 @@
+require("suampa.telescope")
+require("suampa.toogleterm")
+require("suampa.telescope")
+require("suampa.lsp")
+require("suampa.lualine")
+require("suampa.worktree")
